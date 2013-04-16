@@ -172,15 +172,24 @@
       </xsl:if>
 
       <!-- Licencia -->
-      <xsl:if test="//tei:p[@rend='licencia']">
-        <availability status="restricted">
-          <xsl:for-each select="//tei:p[@rend='licencia']">
+      <availability status="restricted">
+        <xsl:choose>
+          <xsl:when test="//tei:p[@rend='licencia']">
+            <xsl:for-each select="//tei:p[@rend='licencia']">
+              <p>
+                <xsl:apply-templates mode="pass3"/>
+              </p>
+            </xsl:for-each>
+          </xsl:when>
+          <xsl:otherwise>
             <p>
-              <xsl:apply-templates mode="pass3"/>
+              Prohibida la reproducción total o parcial
+              por cualquier medio sin autorización escrita
+              del titular de los derechos patrimoniales.
             </p>
-          </xsl:for-each>
-        </availability>
-      </xsl:if>
+          </xsl:otherwise>
+        </xsl:choose>
+      </availability>
 
       <!-- Fecha de publicación -->  
       <xsl:if test="//tei:hi[@rend='fecha-publicacion']">
