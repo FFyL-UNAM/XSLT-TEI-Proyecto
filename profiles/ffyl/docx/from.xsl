@@ -56,8 +56,16 @@
     <xsl:apply-templates select="$Doctext" mode="pass3"/>
   </xsl:template>
 
-  <!-- Removiendo <encodingDesc> -->
-  <xsl:template match="tei:encodingDesc" mode="pass3"/>
+  <!-- Añadiendo Proyecto de investigación -->
+  <xsl:template match="tei:encodingDesc" mode="pass3">
+    <xsl:if test="//tei:p[@rend='proyecto']">
+      <encodingDesc>
+        <projectDesc>
+          <xsl:value-of select="//tei:p[@rend='proyecto']"/>
+        </projectDesc>
+      </encodingDesc>
+    </xsl:if>
+  </xsl:template>
 
   <!-- Agregando el título de la obra -->
   <xsl:template match="tei:titleStmt/tei:title" mode="pass3">
