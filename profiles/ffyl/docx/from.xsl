@@ -212,7 +212,19 @@
   <!-- Modificando <sourceDesc> -->
   <xsl:template match="tei:sourceDesc" mode="pass3">
     <sourceDesc>
-      <p>Marcado desde un Documento Word</p>
+      <p>Texto marcado desde un Documento Word</p>
+      <xsl:choose>
+        <xsl:when test="//tei:p[@rend='fuente']">
+          <xsl:for-each select="//tei:p[@rend='fuente']">
+            <p>
+              <xsl:apply-templates mode="pass3"/>
+            </p>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>
+          <p>No derivado de un texto impreso.</p>
+        </xsl:otherwise>
+      </xsl:choose>
     </sourceDesc>
   </xsl:template>
 
