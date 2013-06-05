@@ -214,12 +214,21 @@
     <sourceDesc>
       <p>Texto marcado desde un Documento Word</p>
       <xsl:choose>
-        <xsl:when test="//tei:p[@rend='fuente']">
-          <xsl:for-each select="//tei:p[@rend='fuente']">
-            <p>
-              <xsl:apply-templates mode="pass3"/>
-            </p>
-          </xsl:for-each>
+        <xsl:when test="//tei:hi[@rend='editorial-impresion']">
+          <bibl>
+            <author>
+              <xsl:value-of select="//tei:p[@rend='autor']"/>
+            </author>.
+            <title level="a">
+              <xsl:value-of select="//tei:p[@rend='Title']"/>
+            </title>.
+            <publisher>
+              <xsl:value-of select="//tei:hi[@rend='editorial-impresion']"/>
+            </publisher>,
+            <date>
+              <xsl:value-of select="//tei:hi[@rend='fecha-impresion']"/>
+            </date>.
+          </bibl>
         </xsl:when>
         <xsl:otherwise>
           <p>No derivado de un texto impreso.</p>
