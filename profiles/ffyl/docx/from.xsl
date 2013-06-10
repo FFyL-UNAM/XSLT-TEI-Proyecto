@@ -192,7 +192,11 @@
           <xsl:otherwise>
             <p>
               D.R. © 2013 Universidad Nacional Autónoma de México.
-              Avenida Universidad 3000, colonia Universidad Nacional Autónoma de México, C. U., delegación Coyoacán, C. P. 04510, Distrito Federal
+              Avenida Universidad 3000, colonia Universidad Nacional 
+              Autónoma de México, C. U., delegación Coyoacán, 
+              C. P. 04510, Distrito Federal.
+            </p>
+            <p>
               Prohibida la reproducción total o parcial
               por cualquier medio sin autorización escrita
               del titular de los derechos patrimoniales.
