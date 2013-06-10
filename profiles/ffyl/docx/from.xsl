@@ -226,7 +226,7 @@
               <xsl:value-of select="//tei:hi[@rend='editorial-impresion']"/>
             </publisher>,
             <date>
-              <xsl:value-of select="//tei:hi[@rend='fecha-impresion']"/>
+              <xsl:value-of select="//tei:hi[@rend='fecha-edicion-impresion']"/>
             </date>.
           </bibl>
         </xsl:when>
