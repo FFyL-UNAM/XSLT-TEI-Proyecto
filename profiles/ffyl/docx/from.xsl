@@ -191,7 +191,7 @@
           </xsl:when>
           <xsl:otherwise>
             <p>
-              Prohibida la reproducción total o parcial
+              D.R. Prohibida la reproducción total o parcial
               por cualquier medio sin autorización escrita
               del titular de los derechos patrimoniales.
             </p>
